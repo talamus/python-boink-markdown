@@ -1,2 +1,3 @@
 # python-boink-markdown
-Publish Markdown files directly from GitHub (or other locations)
+
+Publish Markdown files directly from GitHub (or from any other location)

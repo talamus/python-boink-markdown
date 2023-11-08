@@ -1,3 +1,7 @@
+# Hide test files
+out.txt
+content/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
