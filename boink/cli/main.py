@@ -40,13 +40,14 @@ def main(
     except Exception as error:
         log.exception(error.__class__.__name__, extra={"problem": str(error)})
 
-        # If help is provided, print it out.
-        if hasattr(error, "help") and cfg["verbosity"] != "NONE":
-            print(error.help)
-
-        # Raise the exception to the terminal when debugging
+        # If we are debugging...
         if cfg["verbosity"] == "DEBUG" or args["verbosity"] == "DEBUG":
-            raise
+            print(error.__doc__, "\n")
+            raise  # Raise the exception to the terminal
+
+        # Print help if provided
+        if hasattr(error, "help") and cfg["verbosity"] != "NONE":
+            print(error.help, "\n")
 
         return 1
 
